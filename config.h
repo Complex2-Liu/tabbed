@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static char font[]        = "monospace:size=9";
+static char *font         = "monospace:size=15";
 static char *normbgcolor  = "#222222";
 static char *normfgcolor  = "#cccccc";
 static char *selbgcolor   = "#555555";
@@ -52,11 +52,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,     XK_Return, focusonce,   { 0 } },
 	{ MODKEY|ShiftMask,     XK_Return, spawn,       { 0 } },
 
-	{ MODKEY|ShiftMask,     XK_l,      rotate,      { .i = +1 } },
-	{ MODKEY|ShiftMask,     XK_h,      rotate,      { .i = -1 } },
-	{ MODKEY|ShiftMask,     XK_j,      movetab,     { .i = -1 } },
-	{ MODKEY|ShiftMask,     XK_k,      movetab,     { .i = +1 } },
-	{ MODKEY,               XK_Tab,    rotate,      { .i = 0 } },
+	{ MODKEY,               XK_apostrophe, rotate,  { .i = +1 } },
+	{ MODKEY,               XK_semicolon,  rotate,  { .i = -1 } },
+    { MODKEY|ShiftMask,     XK_apostrophe, movetab, { .i = +1 } },
+	{ MODKEY|ShiftMask,     XK_semicolon,  movetab, { .i = -1 } },
+	{ MODKEY,               XK_Tab,        rotate,  { .i = 0 } },
 
 	{ MODKEY,               XK_grave,  spawn,       SETPROP("_TABBED_SELECT_TAB") },
 	{ MODKEY,               XK_1,      move,        { .i = 0 } },
